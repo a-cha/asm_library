@@ -69,8 +69,8 @@ int 	main()
 	printf("\nresult:\n");
 	print_list(one);
 //	printf("\n");
-//	tmp = ft_list_sort(&one, &cmp);
-//	print_current(tmp);
+	tmp = ft_list_sort(&one, &cmp);
+	print_current(tmp);
 //	print_list(one);
 
 //	printf("%d\n", ft_list_size(one));
