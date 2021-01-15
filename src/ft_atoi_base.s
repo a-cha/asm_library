@@ -117,7 +117,7 @@ sign_minus:
 ; main loop
 ; the next registers are occupied now:
 ; rax - return value
-; rdi - str
+; rdi - pointer to str
 ; rsi - base (char *)
 ; r10 - base (int)
 ; rcx - sign
