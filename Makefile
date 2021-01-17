@@ -24,7 +24,6 @@ TEST_DIR := ./tests/
 NAME := libasm.a
 TEST_FILE := $(TEST_DIR)test.c
 SRCS :=					\
-test_free.s				\
 ft_read.s				\
 ft_strcmp.s				\
 ft_strcpy.s				\
@@ -40,18 +39,24 @@ ft_list_sort.s			\
 OBJS := ${SRCS:.s=.o}
 O_WITH_DIR := $(addprefix $(OBJ_DIR), $(OBJS))
 
+# Colors
+BOLD=\033[1m
+GREEN=\033[32m
+RED=\033[31m
+BLUE=\033[36m
+STD=\033[0m
+
 # Rules and dependencies
 all: $(NAME)
 
-$(NAME): make_lib make_exec
-
-make_exec:
-	gcc -o asm -I $(INCS_DIR) $(TEST_FILE) $(NAME)
-
-make_lib: $(O_WITH_DIR)
+$(NAME): $(O_WITH_DIR)
 	ar rc $(NAME) $?
 	ranlib $(NAME)
-	@echo "\033[32m$(NAME) successfully created\033[0m" ✅
+	@echo "$(BOLD)Library file $(BLUE)$(NAME) $(STD)$(BOLD)$(GREEN)created$(STD)"
+
+exec: $(NAME)
+	gcc -o asm -I $(INCS_DIR) $(TEST_FILE) $(NAME)
+	@echo "$(BOLD)Binary file$(BLUE) asm $(STD)$(BOLD)$(GREEN)created$(STD)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.s $(INCS_DIR)libasm.h
 	@mkdir -p $(OBJ_DIR)
@@ -60,10 +65,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.s $(INCS_DIR)libasm.h
 # Standard rules
 clean:
 	rm -rf $(OBJ_DIR)
+	@echo "$(BOLD)All $(BLUE)object files$(RED) deleted$(STD)"
 fclean: clean
 	rm -f $(NAME)
-	rm -f nasm
+	rm -f asm
+	@echo "$(BOLD)$(BLUE)Library $(STD)$(BOLD)& $(BLUE)binary$(RED) deleted$(STD)"
 
 re: fclean all
 
-.PHONY: all clean fclean re make_lib make_exec
+.PHONY: all clean fclean re exec
