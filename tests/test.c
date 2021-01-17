@@ -45,7 +45,7 @@ int		main(void)
 	printf("Std:\t%zu\n", strlen(""));
 
 	printf("\n\n=====  TEST READ  =====\n");
-	fd = open("tests/test_read", O_RDWR);
+	fd = open("tests/test_read_write", O_RDWR);
 	dst = malloc(6);
 	dst[5] = 0;
 	printf("\nStdin\n");

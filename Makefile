@@ -54,7 +54,7 @@ $(NAME): $(O_WITH_DIR)
 	ranlib $(NAME)
 	@echo "$(BOLD)Library file $(BLUE)$(NAME) $(STD)$(BOLD)$(GREEN)created$(STD)"
 
-exec: $(NAME)
+test: $(NAME)
 	gcc -o asm -I $(INCS_DIR) $(TEST_FILE) $(NAME)
 	@echo "$(BOLD)Binary file$(BLUE) asm $(STD)$(BOLD)$(GREEN)created$(STD)"
 
