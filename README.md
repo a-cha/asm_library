@@ -2,7 +2,7 @@
 
 ###### _Small library written on Assembly language_
 
-#### Contains the following functions, rewritten from GNU C Library (C99 standard):
+#### Contains the following functions, rewritten from Standard C Library:
 
 - ft_strlen
 - ft_strcmp
