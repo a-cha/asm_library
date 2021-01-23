@@ -20,9 +20,9 @@
 - ft_list_remove_if
 - ft_list_sort
 
-All the source files are provided with comments, 
-explaining how the functions works. There are also test
-files that will show how to use the library.
+Source files of extra functions are provided with 
+comments, explaining how the functions works. There are also 
+test files that will show how to use the Assembly library.
 
 ## Usage
 
