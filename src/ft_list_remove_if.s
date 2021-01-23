@@ -1,5 +1,12 @@
-; args order: rdi, rsi, rdx, rcx
 ; void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
+
+; Removes a node of the list containing the same data as data_ref.
+;
+; Received arguments:
+; t_list **begin_list - pointer to the first element of the chain list.
+; void *data_ref - pointer to reference data, using for comparison.
+; int (*cmp)() - pointer to function, whitch compares node's data with data_ref.
+
 
 section		.text
 extern _free

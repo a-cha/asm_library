@@ -1,5 +1,11 @@
-; args order: rdi, rsi, rdx, rcx
 ; void	ft_list_push_front(t_list **begin_list, void *data);
+
+; Creates new node type of t_list and push it to the beginning of the list.
+;
+; Received arguments:
+; t_list **begin_list - pointer to the first element of the chain list (may be NULL).
+; void *data - pointer to data, on the basis of whitch a new node will be created.
+
 
 extern _malloc
 
