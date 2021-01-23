@@ -23,11 +23,14 @@ ssize_t				ft_write(int fildes, const void *buf, size_t nbyte);
 char				*ft_strdup(const char *s1);
 ssize_t				ft_read(int fildes, void *buf, size_t nbyte);
 
+# ifndef T_LIST
+#  define T_LIST
 typedef struct		s_list
 {
 	void			*data;
 	struct s_list	*next;
 }					t_list;
+# endif
 
 int 				ft_atoi_base(char *str, char *base);
 void				ft_list_push_front(t_list **begin_list, void *data);
