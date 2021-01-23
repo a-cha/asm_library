@@ -69,7 +69,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	rm -f asm
-	@echo "$(BOLD)$(BLUE)Library $(STD)$(BOLD)& $(BLUE)binary$(RED) deleted$(STD)"
+	@echo "$(BOLD)Library $(BLUE)$(NAME)$(RED) deleted$(STD)"
 
 re: fclean all
 
